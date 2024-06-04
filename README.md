@@ -1,3 +1,4 @@
 # 100_exercicios_JS_DOM
-# Resolução de 70 exercícios utilizando apenas Javascrip e 30 questoes com manipulação da DOM.
 # Em andamento...
+#Resolução de 100 exercícios, sendo 70 apenas com Javascript e 30 com manipulação da DOM.
+
