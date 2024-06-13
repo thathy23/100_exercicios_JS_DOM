@@ -5,7 +5,7 @@ const strings = ["Agua", "Vinho", "Refirgerante", "Aguardente"];
 
 function mostreStringA (strings) {
     return strings.filter(function (letra){
-        //primeiro filtrar so mostrar o que começa com-filter()
+        //primeiro filtrar so mostrar o que definiu com-filter()
         //startsWith() - "so mostra o que começa com()"
         return letra.startsWith('A');
     });
