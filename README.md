@@ -244,7 +244,7 @@ onde cada string tenha as consoantes duplicadas. Utilize a função replace() pa
 
 100 - Crie um script que declare uma função que receba um array de números como parâmetro e retorne um novo array contendo apenas os números que são divisíveis por 10.
 
-# Manipulação da DOM (HTML + JS) (50 questões):
+# Manipulação do DOM (HTML + JS) (50 questões):
 
 50 exercícios com maior complexidade, envolvendo condicionais, loops, funções e manipulação de DOM, baseados nos assuntos trabalhados anteriormente:
 
