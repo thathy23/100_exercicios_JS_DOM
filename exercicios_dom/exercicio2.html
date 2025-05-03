@@ -1,0 +1,67 @@
+<!-- 2 - Crie uma página que verifique se um número é primo.
+ O usuário deve inserir um número e a página deve exibir se ele é primo ou não. -->
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Primo</title>
+ </head>
+ <body>
+    <h1>Verifique se o número informado é Primo</h1>
+    <p>Informe um número inteiro: </p>
+
+    <form id="formNumPrimo" onsubmit="verificarNumPrimo(); return false">
+
+        <input type="number" id="numero" placeholder="Digite um número" required>
+
+        <button type="submit">Verificar</button>
+        <button type="button" onclick="limparCampos()">Limpar</button>
+
+    </form>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+
+        function verificarNumPrimo(){
+
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado = document.getElementById('resultado');
+
+            let primo = true;
+
+            if (numero <= 1 || !Number.isInteger(numero)){
+
+                resultado.innerHTML = `Digite um numero inteiro maior que 1` 
+                return;                            
+            } 
+
+            for(i=2; i < numero; i++){
+
+                 if(numero % i === 0){  
+                    primo = false;
+                    break; 
+                 }
+            }
+            
+            if(primo){
+
+                resultado.innerHTML = `O número ${numero} é Primo!`
+
+            }else{
+                 resultado.innerHTML = `O número ${numero} não é Primo!`
+
+            }           
+        }
+        
+        function limparCampos(){
+
+            document.getElementById('formNumPrimo').reset();
+            document.getElementById('resultado').innerHTML = '';
+        }    
+
+    </script>    
+ </body>
+ </html>

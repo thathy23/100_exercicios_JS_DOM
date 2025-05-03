@@ -2,46 +2,57 @@
  Exiba se o aluno foi aprovado (média >= 7) ou reprovado (média < 7). -->
 
  <!DOCTYPE html>
- <html lang="pt-BR">
+ <html lang="pt-br">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo de Média</title>
+    <title>Calculadora de Médias</title>
  </head>
  <body>
-    <h1>Calculadora de Médias</h1>
-    <p>Insira suas notas: </p>
 
-    
-        <!-- <input type="number" id="nota1" placeholder="Nota 1" required><br><br>
+    <h1>Calcule sua Média!</h1>
+    <p>Insira suas 4 notas: </p>
+
+    <form id="formNotas" onsubmit="calcularMedia(); return false;">
+        <input type="number" id="nota1" placeholder="Nota 1" required><br><br>
         <input type="number" id="nota2" placeholder="Nota 2" required><br><br>
         <input type="number" id="nota3" placeholder="Nota 3" required><br><br>
         <input type="number" id="nota4" placeholder="Nota 4" required><br><br>
-        <button type="button" onclick="calcularMedia()">Calcular Média</button>
-    
-    <h2 id="resultado"></h2>
+        <button type="submit">Calcular Média</button>
+        <button type="button" onclick="limparCampos()">Limpar</button>
+
+    </form>
+
+    <h2 id = "resultado"></h2>
 
     <script>
-        function calcularMedia() {
-            // Captura as notas inseridas
+        function calcularMedia(){
             const nota1 = parseFloat(document.getElementById('nota1').value);
             const nota2 = parseFloat(document.getElementById('nota2').value);
             const nota3 = parseFloat(document.getElementById('nota3').value);
             const nota4 = parseFloat(document.getElementById('nota4').value);
 
-            // Calcula a média
-            const media = (nota1 + nota2 + nota3 + nota4) / 4;
+            const media = (nota1+nota2+nota3+nota4) / 4;
 
-            // Exibe o resultado
             const resultado = document.getElementById('resultado');
+
             if (media >= 7) {
-                resultado.innerHTML = `Média: ${media.toFixed(2)} - Aluno aprovado! 🎉`;
+                resultado.innerHTML = `Sua média é: ${media.toFixed(2)} e você foi Aprovado! PARABÉNS`;
                 resultado.style.color = 'green';
-            } else {
-                resultado.innerHTML = `Média: ${media.toFixed(2)} - Aluno reprovado. 😞`;
+
+            }else{
+
+                resultado.innerHTML = `Sua média é: ${media.toFixed(2)} e você foi Reprovado! ESTUDE MAIS`;
                 resultado.style.color = 'red';
-            }
+            }            
         }
-    </script> -->
+
+        function limparCampos(){
+                document.getElementById('formNotas').reset();// Para limpar os inputs
+                document.getElementById('resultado').innerHTML = ''; // limpar o resultado
+            }                       
+            
+    </script>
+    
  </body>
  </html>
